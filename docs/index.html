@@ -12,10 +12,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            justify-content: flex-start; /* Align content to the top */
+            min-height: 100vh; /* Ensure body takes at least the full viewport height */
             margin: 0;
             background-color: #f4f4f4;
+            overflow-y: auto; /* Enable vertical scrolling */
         }
         h1 {
             font-family: "Roboto", sans-serif;
@@ -42,7 +43,7 @@
         iframe {
             border: none;
             width: 100%; /* Make iframes responsive */
-            height: 600px; /* Set a fixed height */
+            height: min(80vh, 500px); /* Set height to a minimum of 80% of the viewport height and a maximum of 500px */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>

@@ -1,1 +1,39 @@
-Hello World (in docs) - 2/12 test
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            margin-bottom: 20px; /* Add some space between the title and the iframe */
+            text-align: center; /* Center the title text */
+        }
+        .iframe-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 1 row, 3 columns */
+            gap: 20px; /* Space between the iframes */
+        }
+        iframe {
+            border: none;
+            width: 100%; /* Make iframes responsive */
+            height: 600px; /* Set desired height */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World (in docs) - 9/12 test</h1>
+    <div class="iframe-container">
+        <!-- Embedding the Viewer -->
+        <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 1"></iframe>
+        <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 2"></iframe>
+        <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 3"></iframe>
+    </div>
+</body>

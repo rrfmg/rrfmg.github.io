@@ -35,16 +35,21 @@
         .iframe-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-            gap: 20px; /* Space between the iframes */
-            width: 100%; /* Full width */
+            gap: 30px; /* Space between the iframes */
+            width: 90%; /* Full width */
             padding: 0 20px; /* Padding for mobile view */
             box-sizing: border-box; /* Include padding in width calculation */
         }
         iframe {
             border: none;
-            width: 100%; /* Make iframes responsive */
+            width: 100%; /* Make iframes and video responsive */
             height: min(80vh, 500px); /* Set height to a minimum of 80% of the viewport height and a maximum of 500px */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        video {
+            border: none;
+            width: 100%; /* Make iframes and video responsive */
+            height: min(80vh, 500px); /* Set height to a minimum of 80% of the viewport height and a maximum of 500px */
         }
     </style>
 </head>
@@ -53,7 +58,7 @@
     <h2>3D reconstruction of static scenes</h2>
     <div class="iframe-container">
         <!-- Embedding the Viewer -->
-        <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 1"></iframe>
+        <video src="360_ramon_segm_scale_effect.mp4" title="360 Video" autoplay loop muted></video>
         <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 2"></iframe>
         <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 3"></iframe>
     </div>

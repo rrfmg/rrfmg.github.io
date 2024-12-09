@@ -17,13 +17,16 @@
         }
         .iframe-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 1 row, 3 columns */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
             gap: 20px; /* Space between the iframes */
+            width: 100%; /* Full width */
+            padding: 0 20px; /* Padding for mobile view */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
         iframe {
             border: none;
             width: 100%; /* Make iframes responsive */
-            height: 600px; /* Set desired height */
+            height: 600px; /* Set a fixed height */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>

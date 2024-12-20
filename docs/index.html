@@ -60,6 +60,11 @@
             border: none; /* Remove borders */
             cursor: pointer; /* Pointer cursor on hover */
             font-size: 16px; /* Font size */
+            border-top-left-radius: 15px; 
+            margin-top:2%; 
+            margin-left: 2%;
+            margin-right: 2%;
+            border-top-right-radius: 15px;
         }
         button img {
             margin-right: 10px; /* Space between icon and text */
@@ -69,40 +74,85 @@
         button:hover {
             background-color: #e0e0e0; /* Slightly darker grey on hover */
         }
+        #details {
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Dark text color */
+            height: 0;
+            border: none; /* Remove borders */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size */
+            z-index: 10;
+            position: absolute;
+            overflow:hidden;
+            margin-left:2%; 
+            margin-right:2%; 
+            transition: height 1s;
+            transition-timing-function: ease;
+        }
+        #details.show{
+            height:100%;
+            padding:2%
+        }
+        .video-container {
+            position: relative; 
+            width: 100%; 
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 15px;
+        }
+
 
     </style>
     <script>
         function toggleDetails() {
-            var details = document.getElementById("details");
-            if (details.style.display === "none") {
-                details.style.display = "block";
+            var details = document.getElementById('details');
+            if (details.classList.contains('show')) {
+                details.classList.remove('show');
             } else {
-                details.style.display = "none";
-            }
+                details.classList.add('show');
+            }   
         }
+        // Fetch the content from the .txt file and insert it into the <p id="details-content"> element
+        fetch('video-details.txt')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('details-content').innerHTML = data;
+        })
+        .catch(error => console.error('Error fetching details:', error));
+
     </script>
 </head>
 <body>
     <h1>[TITLE PLACEHOLDER]</h1>
     <h2>3D reconstruction of static scenes</h2>
-    <button onclick="toggleDetails()">
-        <i class="fas fa-flask"></i> <!-- Font Awesome lab jar icon -->
+    <!---<button onclick="toggleDetails()">
+        <i class="fas fa-flask"></i> <
         Click for more details
     </button>
     <div id="details" style="display: none;">
         This video demonstrates the 360-degree view of the static scene with segmentation and scale effects applied.
-    </div>
+    </div> -->
+
     <div class="iframe-container">
         <!-- Embedding the Viewer -->
-        <video src="360_ramon_segm_scale_effect.mp4" title="360 Video" autoplay loop muted></video>
+        <div class="video-container" >
+            <button onclick="toggleDetails()">
+                <i class="fas fa-flask"></i> 
+                Click for more details
+            </button>
+            <div id="details">
+                <p id="details-content"></p>
+            </div> 
+            <video src="360_ramon_segm_scale_effect.mp4" title="360 Video" autoplay loop muted style ="width:100%"></video>
+        </div>
+    
         <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 2"></iframe>
         <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 3"></iframe>
     </div>
     <h2>Human avatars animations</h2>
-    <div class="iframe-container">
-        <!-- Embedding the Viewer -->
-        <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 1"></iframe>
-        <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 2"></iframe>
-        <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 3"></iframe>
-    </div>
+     <div class="iframe-container">
+      <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 1"></iframe>
+      <!--    <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 2"></iframe>
+        <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 3"></iframe> -->
+    </div> 
 </body>

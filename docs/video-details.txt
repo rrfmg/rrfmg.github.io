@@ -1,0 +1,9 @@
+Esto es una prueba de que los detalles del video se pueden poner en un text
+
+
+
+¿Funciona este cambio de linea?
+ 
+<br> y este?
+ 
+Hay que ver como meter los intros para que se vean bien

@@ -74,6 +74,13 @@ class FrameScene extends Script {
         }
     }
 
+    // Como capar la posición, el problema es que hace codas raras luego
+    // update() {
+    //     const position = this.entity.getPosition();
+    //     position.y = Math.max(0, position.y)
+    //     position.y = Math.min(position.y, 3);
+    // }
+    
     frameScene(bbox, smooth = true) {
         const sceneSize = bbox.halfExtents.length();
         const distance = sceneSize / Math.sin(this.entity.camera.fov / 180 * Math.PI * 0.5);

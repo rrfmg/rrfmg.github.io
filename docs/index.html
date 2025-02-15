@@ -1,0 +1,55 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
+    <!-- Include Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleDetails() {
+            var details = document.getElementById('details');
+            if (details.classList.contains('show')) {
+                details.classList.remove('show');
+            } else {
+                details.classList.add('show');
+            }   
+        }
+        // Fetch the content from the .txt file and insert it into the <p id="details-content"> element
+        fetch('video-details.txt')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('details-content').innerHTML = data;
+        })
+        .catch(error => console.error('Error fetching details:', error));
+
+    </script>
+</head>
+<body>
+    <h1>[TITLE PLACEHOLDER]</h1>
+    <h2>3D reconstruction of static scenes</h2>
+    <div class="iframe-container sneakers-container">
+        <!-- <div class="video-container" >
+            <button onclick="toggleDetails()">
+                <i class="fas fa-flask"></i> 
+                Click for more details
+            </button>
+            <div id="details">
+                <p id="details-content"></p>
+            </div> 
+            <video src="artifacts/360_ramon_segm_scale_effect.mp4" title="360 Video" autoplay loop muted style ="width:100%"></video>
+        </div> -->
+    
+        <video class="sneakers-video" src="artifacts/sneakers_video.mp4" title="360 Video" autoplay loop muted></video>
+        <i class="fas fa-chevron-right" style="font-size: 24px; margin: 0 20px; align-self: center;"></i>
+        <iframe src="artifacts/sneakers-viewer/index.html" title="SuperSplat Viewer 3"></iframe>
+    </div>
+    <h2>Human avatars animations</h2>
+     <!-- <div class="iframe-container"> -->
+      <!-- <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 1"></iframe> -->
+    <!-- </div>  -->
+    <div class="video-container" >
+        <video src="artifacts/ramon_dunk_w_original.mp4" autoplay loop muted style ="width:100%"></video>
+    </div>
+</body>

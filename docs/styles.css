@@ -8,7 +8,7 @@ body {
     justify-content: flex-start;
     min-height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     overflow-y: auto;
 }
 
@@ -51,18 +51,34 @@ iframe {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.video-container {
+    position: static;
+    width: min(100%, 80vw, 700px);
+    height: min(100%, 80vw, 700px);
+    /* background-color: #e8e7b7; */
+    border-radius: 15px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    flex-direction: column; /* So that button and video are stacked vertically */
+}   
+
 video {
-    border: none;
+    box-sizing: border-box;
+    border: 1em solid #f0f0f0;
+    border-radius: 0 15px 15px 15px;
     width: 100%;
-    height: min(80vh, 500px);
+    height: auto;
 }
 
 .sneakers-video {
+    height: 100%;
     width: auto;
     margin-left: auto; /* This will align the video to the right */
 }
 
 button {
+    align-self: flex-start;    
     background-color: #f0f0f0;
     color: #333;
     padding: 10px 20px;
@@ -70,9 +86,9 @@ button {
     cursor: pointer;
     font-size: 16px;
     border-top-left-radius: 15px;
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-top: 2%; 
+    /* margin-left: 2%; */
+    /* margin-right: 2%; */
     border-top-right-radius: 15px;
 }
 
@@ -106,11 +122,3 @@ button:hover {
     height: 100%;
     padding: 2%
 }
-
-.video-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    background-color: #ffffff;
-    border-radius: 15px;
-} 

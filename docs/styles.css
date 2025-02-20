@@ -26,7 +26,7 @@ h2 {
 .container { 
     /* No-colored container - To vertically combine a button with a video, iframe or other container */
     position: static;
-    width: min(100%, 80vw, 700px);
+    width: min(100%, 80vw, 800px);
     max-height: min(100%, 80vw, 700px);
     height: fit-content;
     padding: 0 20px;

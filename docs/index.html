@@ -29,7 +29,7 @@
 <body>
     <h1>My experiments with Gaussian Splatting and human avatars: some examples</h1>
     <h2>3D reconstruction of static scenes</h2>
-    <div class="iframe-container">
+    <div class="container">
         <button onclick="toggleDetails()">
             <i class="fas fa-flask"></i> 
             A pair of sneakers - Click here for more details
@@ -37,13 +37,13 @@
         <div id="details">
             <p id="details-content"></p>
         </div>
-        <div class="sneakers-container">
-            <video class="sneakers-video" src="artifacts/sneakers_video.mp4" title="360 Video" autoplay loop muted></video>
+        <div class="container chevron-container">
+            <video class="vertical-video" src="artifacts/sneakers_video.mp4" title="360 Video" autoplay loop muted></video>
             <i class="fas fa-chevron-right" style="font-size: 24px; margin: 0 20px; align-self: center;"></i>
             <iframe src="artifacts/sneakers-viewer/index.html" title="SuperSplat Viewer 3"></iframe>
         </div>
     </div>
-    <div class="video-container">
+    <div class="container">
         <button onclick="toggleDetails()">
             <i class="fas fa-flask"></i> 
             My living room - Click here for more details

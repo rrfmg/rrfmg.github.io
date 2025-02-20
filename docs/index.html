@@ -29,20 +29,19 @@
 <body>
     <h1>[TITLE PLACEHOLDER]</h1>
     <h2>3D reconstruction of static scenes</h2>
-    <div class="iframe-container sneakers-container">
-        <!-- <div class="video-container" >
-            <button onclick="toggleDetails()">
-                <i class="fas fa-flask"></i> 
-                Click for more details
-            </button>
-            <div id="details">
-                <p id="details-content"></p>
-            </div> 
-            <video src="artifacts/360_ramon_segm_scale_effect.mp4" title="360 Video" autoplay loop muted style ="width:100%"></video>
-        </div> -->
-        <video class="sneakers-video" src="artifacts/sneakers_video.mp4" title="360 Video" autoplay loop muted></video>
-        <i class="fas fa-chevron-right" style="font-size: 24px; margin: 0 20px; align-self: center;"></i>
-        <iframe src="artifacts/sneakers-viewer/index.html" title="SuperSplat Viewer 3"></iframe>
+    <div class="iframe-container">
+        <button onclick="toggleDetails()">
+            <i class="fas fa-flask"></i> 
+            A pair of sneakers - Click for more details
+        </button>
+        <div id="details">
+            <p id="details-content"></p>
+        </div>
+        <div class="sneakers-container">
+            <video class="sneakers-video" src="artifacts/sneakers_video.mp4" title="360 Video" autoplay loop muted></video>
+            <i class="fas fa-chevron-right" style="font-size: 24px; margin: 0 20px; align-self: center;"></i>
+            <iframe src="artifacts/sneakers-viewer/index.html" title="SuperSplat Viewer 3"></iframe>
+        </div>
     </div>
     <div class="video-container">
         <button onclick="toggleDetails()">
@@ -52,6 +51,7 @@
         <div id="details">
             <p id="details-content"></p>
         </div>
+
         <video src="artifacts/salon_w_scale_effect.mp4" autoplay loop muted></video>
     </div>
     <h2>Human avatars animations</h2>
@@ -59,6 +59,9 @@
       <!-- <iframe src="ramon_static_cleaned.html" title="SuperSplat Viewer 1"></iframe> -->
     <!-- </div>  -->
     <div class="video-container" >
-        <video src="artifacts/ramon_dunk_w_original.mp4" autoplay loop muted style ="width:100%"></video>
+        <video class="vertical-video" src="artifacts/ram_dyn_avatar_office.mp4" autoplay loop muted style></video>
+    </div>
+    <div class="video-container" >
+        <video src="artifacts/ramon_dunk_w_original.mp4" autoplay loop muted style></video>
     </div>
 </body>

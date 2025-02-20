@@ -29,32 +29,50 @@ h2 {
 }
 
 .iframe-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    width: 90%;
+    position: static;
+    width: min(100%, 80vw, 700px);
+    max-height: min(100%, 80vw, 700px);
+    height: fit-content;
     padding: 0 20px;
-    box-sizing: border-box;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    flex-direction: column; /* So that elements within are stacked vertically */
 }
 
-.iframe-container.sneakers-container {
-    grid-template-columns: fit-content(100%) fit-content(100%) fit-content(100%);
+.sneakers-container {
+    /* grid-template-columns: fit-content(100%) fit-content(100%) fit-content(100%); */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     gap: 0px;
     overflow-x: auto;  /* Allows horizontal scrolling if content is wider than container */
+    box-sizing: border-box;
+    border: 1em solid #f0f0f0;
+    background-color: #f0f0f0;
+}
+
+.sneakers-video {
+    height: 100%;
+    width: auto;
+    border: 0;
+    margin-left: auto; /* This will align the video to the left */
 }
 
 iframe {
     border: none;
+    /* width: 100%; */
+    aspect-ratio: 1 / 1;  /* Forces a square aspect ratio */
+    height: 100%; 
     width: 100%;
-    height: min(80vh, 500px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .video-container {
     position: static;
     width: min(100%, 80vw, 700px);
-    height: min(100%, 80vw, 700px);
+    max-height: min(100%, 80vw, 700px);
+    height: fit-content;
     /* background-color: #e8e7b7; */
     border-radius: 15px;
     display: flex;
@@ -71,11 +89,11 @@ video {
     height: auto;
 }
 
-.sneakers-video {
-    height: 100%;
+.vertical-video {
     width: auto;
-    margin-left: auto; /* This will align the video to the right */
+    height: 100%;
 }
+
 
 button {
     align-self: flex-start;    

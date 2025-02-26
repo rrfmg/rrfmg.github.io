@@ -128,7 +128,6 @@ button.show {
 }
 
 #details.show {
-    /* height: 100%; */
     max-height: min(100%, 80vw, 700px);
     height: fit-content;
     padding: 0;

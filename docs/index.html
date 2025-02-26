@@ -10,40 +10,47 @@
     <script>
         function toggleDetails() {
             var details = document.getElementById('details');
+            var button = document.querySelector('button');
             if (details.classList.contains('show')) {
                 details.classList.remove('show');
+                button.classList.remove('show');
             } else {
                 details.classList.add('show');
+                button.classList.add('show');
             }   
         }
-        // Fetch the content from the .txt file and insert it into the <p id="details-content"> element
-        fetch('video-details.txt')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('details-content').innerHTML = data;
-        })
-        .catch(error => console.error('Error fetching details:', error));
-
     </script>
 </head>
 <body>
     <h1>My experiments with Gaussian Splatting and human avatars: some examples</h1>
     <h2>3D reconstruction of static scenes</h2>
+    <h3>A pair of sneaker</h3>
     <div class="container">
-        <button onclick="toggleDetails()">
-            <i class="fas fa-flask"></i> 
-            A pair of sneakers - Click here for more details
-        </button>
-        <div id="details">
-            <p id="details-content"></p>
-        </div>
         <div class="container chevron-container">
             <video class="vertical-video" src="artifacts/sneakers_video.mp4" title="360 Video" autoplay loop muted></video>
             <i class="fas fa-chevron-right" style="font-size: 24px; margin: 0 20px; align-self: center;"></i>
-            <iframe src="artifacts/sneakers-viewer/index.html" title="SuperSplat Viewer 3"></iframe>
+            <iframe class="splats-iframe" src="artifacts/sneakers-viewer/index.html" title="SuperSplat Viewer 3"></iframe>
+        </div>
+        <button onclick="toggleDetails()">
+            <i class="fas fa-flask"></i> 
+            Expand for more details
+            <i class="fa-solid fa-arrow-pointer" style="margin-left: auto;"></i>
+        </button>
+        <iframe id="details" src="sneakers_details.html"></iframe>
+    </div>
+    <h3>My living room</h3>
+    <div class="container">
+        <video src="artifacts/salon_w_scale_effect.mp4" autoplay loop muted></video>
+        <button onclick="toggleDetails()">
+            <i class="fas fa-flask"></i> 
+            Expand for more details
+            <i class="fa-solid fa-arrow-pointer" style="margin-left: auto;"></i>
+        </button>
+        <div id="details">
         </div>
     </div>
-    <div class="container">
+
+    <!-- <div class="container">
         <button onclick="toggleDetails()">
             <i class="fas fa-flask"></i> 
             My living room - Click here for more details
@@ -102,4 +109,4 @@
         <video src="artifacts/ram_flamenco_salon.mp4" autoplay loop muted></video>
     </div>
 </body>
-
+ -->

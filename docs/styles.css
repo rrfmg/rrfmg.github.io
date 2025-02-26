@@ -50,7 +50,7 @@ h2 {
     border-radius: 0 15px 15px 15px;
 }
 
-iframe {
+.splats-iframe {
     border: none;
     aspect-ratio: 1 / 1;  /* Forces a square aspect ratio */
     height: 100%; 
@@ -77,45 +77,60 @@ video {
 button {
     align-self: flex-start;    
     background-color: #f0f0f0;
+    align-items: center;
+    justify-content: space-between; /* Ensures space between the text and the right icon */
+    width: 100%;
     color: #333;
-    padding: 10px 20px;
+    padding: 10;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    border-top-left-radius: 15px;
-    margin-top: 2%; 
-    /* margin-left: 2%; */
-    /* margin-right: 2%; */
+    border-radius: 15px;
+    margin-top: 2%;
+    text-align: left; 
     border-top-right-radius: 15px;
+    display: flex
 }
 
-button img {
-    margin-right: 10px;
-    width: 20px;
-    height: 20px;
+button i:first-child {
+    margin-right: 10px; /* Adjust the value as needed */
 }
+
+button i.fa-arrow-pointer {
+    color: rgba(255, 140, 0, 0.801);
+    font-size: 20px;
+}
+
 
 button:hover {
     background-color: #e0e0e0;
+}
+
+button.show {
+    border-radius: 15px 15px 0 0;
 }
 
 #details {
     background-color: #f0f0f0;
     color: #333;
     height: 0;
+    width: min(100%, 80vw, 800px);
     border: none;
     cursor: pointer;
     font-size: 16px;
     z-index: 10;
-    position: absolute;
+    position: relative;
     overflow: hidden;
     margin-left: 2%;
     margin-right: 2%;
-    transition: height 1s;
+    transition: max-height 1s;
     transition-timing-function: ease;
 }
 
 #details.show {
-    height: 100%;
-    padding: 2%
+    /* height: 100%; */
+    max-height: min(100%, 80vw, 700px);
+    height: fit-content;
+    padding: 0;
+    border-radius: 0 0 15px 15px;
 }

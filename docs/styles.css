@@ -47,7 +47,7 @@ h2 {
     box-sizing: border-box;
     border: 1em solid #f0f0f0;
     background-color: #f0f0f0;
-    border-radius: 0 15px 15px 15px;
+    border-radius: 15px;
 }
 
 .splats-iframe {
@@ -60,7 +60,7 @@ h2 {
 video {
     box-sizing: border-box;
     border: 1em solid #f0f0f0;
-    border-radius: 0 15px 15px 15px;
+    border-radius: 15px;
     width: 100%;
     height: auto;
 }
@@ -73,6 +73,13 @@ video {
     border: 0
 }
 
+iframe {
+    width: 100%;
+}
+
+div {
+    width: 100%
+}
 
 button {
     align-self: flex-start;    
@@ -110,7 +117,7 @@ button.show {
     border-radius: 15px 15px 0 0;
 }
 
-#details {
+.dropdown {
     background-color: #f0f0f0;
     color: #333;
     height: 0;
@@ -121,14 +128,11 @@ button.show {
     z-index: 10;
     position: relative;
     overflow: hidden;
-    margin-left: 2%;
-    margin-right: 2%;
     transition: max-height 1s;
     transition-timing-function: ease;
 }
 
-#details.show {
-    max-height: min(100%, 80vw, 700px);
+.dropdown.show {
     height: fit-content;
     padding: 0;
     border-radius: 0 0 15px 15px;

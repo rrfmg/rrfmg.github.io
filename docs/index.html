@@ -27,7 +27,7 @@
 <body>
     <h1>My experiments with Gaussian Splatting and Human Avatars: some examples</h1>
     <h2>3D reconstruction of static scenes</h2>
-    <h3>A pair of sneaker</h3>
+    <h3>A pair of sneakers</h3>
     <div class="container">
         <div class="container chevron-container">
             <video class="vertical-video" src="artifacts/sneakers_video.mp4" title="360 Video" autoplay loop muted></video>
@@ -51,7 +51,8 @@
         </button>
         <iframe class="dropdown dropdown-salon" src="salon_details.html"></iframe>
     </div>
-    <h2>Human avatars animations</h2>
+    <h2>Human Avatars</h2>
+    <h3>GaussianAvatar</h3>
     <div class="container">
         <div class="container chevron-container">
             <video class="vertical-video" src="artifacts/ram_dyn_avatar_office.mp4" autoplay loop muted></video>
@@ -63,40 +64,36 @@
             Expand for more details
             <i class="fa-solid fa-arrow-pointer" style="margin-left: auto;"></i>
         </button>
-        <iframe class="dropdown dropdown-salon" src="salon_details.html"></iframe>
+        <iframe class="dropdown dropdown-salon" src="gavatar_details.html"></iframe>
     </div>
-
+    <h3>Throwing down a dunk at the NBA (left: original, right: my avatar)</h3>
     <div class="container">
-        <button onclick="toggleDetails()">
-            <i class="fas fa-flask"></i> 
-            Me throwing down a dunk at the NBA - Click here for more details
-        </button>
-        <div id="details">
-            <p id="details-content"></p>
-        </div>
         <video src="artifacts/ramon_dunk_w_original.mp4" autoplay loop muted></video>
-    </div>
-
-    <div class="container">
-        <button onclick="toggleDetails()">
+        <button onclick="toggleDetails(event)">
             <i class="fas fa-flask"></i> 
-            Dancing some flamenco - Click here for more details
+            Expand for more details
+            <i class="fa-solid fa-arrow-pointer" style="margin-left: auto;"></i>
         </button>
-        <div id="details">
-            <p id="details-content"></p>
-        </div>
+        <iframe class="dropdown dropdown-salon" src="nba_details.html"></iframe>
+    </div>
+    <h3>Dancing some flamenco in 3D</h3>
+    <div class="container">
         <video src="artifacts/ram_flamenco_360.mp4" autoplay loop muted></video>
-    </div>
-
-    <div class="container">
-        <button onclick="toggleDetails()">
+        <button onclick="toggleDetails(event)">
             <i class="fas fa-flask"></i> 
-            Same flamenco but in my living room - Click here for more details
+            Expand for more details
+            <i class="fa-solid fa-arrow-pointer" style="margin-left: auto;"></i>
         </button>
-        <div id="details">
-            <p id="details-content"></p>
-        </div>
-        <video src="artifacts/ram_flamenco_salon.mp4" autoplay loop muted></video>
+        <iframe class="dropdown dropdown-salon" src="flamenco_details.html"></iframe>
+    </div>
+    <div class="container">
+        <video src="artifacts/ram_flamenco_salon.mp4" autoplay loop muted style="margin-top: 1.0em;"></video>
+        <button onclick="toggleDetails(event)">
+            <i class="fas fa-flask"></i> 
+            Expand for more details
+            <i class="fa-solid fa-arrow-pointer" style="margin-left: auto;"></i>
+        </button>
+        <iframe class="dropdown dropdown-salon" src="flamenco_details.html"></iframe>    
     </div>
 </body>
  

@@ -1,5 +1,16 @@
 /* Adjust the height of each dropdown individually, for some reason, can't make fit-content on the general class work */
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 250;
+    height: fit-content;
+}
 
 .dropdown-sneakers.show {
+    height: 6.5em;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown-salon.show{
     height: 6.5em;
 }

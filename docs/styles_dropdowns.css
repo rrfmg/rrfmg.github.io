@@ -25,3 +25,7 @@ body {
 .dropdown-flamenco.show{
     height: 7.5em;
 }
+
+.dropdown-flamenco-exavatar.show{
+    height: 8.5em;
+}
